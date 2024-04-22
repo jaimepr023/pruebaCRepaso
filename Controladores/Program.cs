@@ -8,7 +8,7 @@ namespace Prrueba4Evaluacion.Controladores
         public static void Main(string[] args)
         {
             DateTime fechaHoy = DateTime.Today;
-            string fichero = $"C:\\Users\\vspc\\OneDrive\\Escritorio\\{fechaHoy.ToString("ddMMyyyy")}-entidad.txt";
+            string fichero = $"C:\\Users\\profesor\\Desktop\\{fechaHoy.ToString("ddMMyyyy")}-entidad.txt";
             //Interfaces e implementaciones
             MenuInterfaz mi = new MenuImplementacion();
             VehiculosInterfaz vi = new VehiculosImplementacion();
@@ -74,7 +74,7 @@ namespace Prrueba4Evaluacion.Controladores
                                             case 0:   
                                                 break;
                                             case 1:
-                                               // vi.revision();
+                                                vi.revision();
                                                 break;
                                             default:
                                                 Console.WriteLine("No has elegido ninguna opcion, se le devolvera al puerto sur");

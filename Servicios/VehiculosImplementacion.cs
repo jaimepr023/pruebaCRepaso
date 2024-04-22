@@ -54,20 +54,30 @@ namespace Prrueba4Evaluacion.Servicios
 
         public void revision()
         {
+            int contador = 0;
             burbuja();
             foreach (VehiculosDto var in program.listaVehiculosEste)
             {
-                if ((var.LlevaMercancias == false))
+                if (var.LlevaMercancias == false)
                 {
+                    contador++;
                     var.FechaPasoVehiculo = DateTime.Now;
                     var.ZonaDestinoVehiculo = "norte";
                     program.listaVehiculosNorte.Add(var);
+
                 }
-                else
-                {
-                    var.FechaPasoVehiculo = DateTime.Now;
-                    var.ZonaDestinoVehiculo = "sur";
-                }
+            }
+            if (contador == 0)
+            {
+                Console.WriteLine("No hay ningun vehiculo apto");
+            }
+            else if (contador == 1)
+            {
+                Console.WriteLine($"Hay {contador} vehiculo apto");
+            }
+            else
+            {
+                Console.WriteLine($"Hay {contador} vehiculos aptos");
             }
         }
 
@@ -88,10 +98,7 @@ namespace Prrueba4Evaluacion.Servicios
                     }
                 }
             }
-            else
-            {
-                program.listaVehiculosEste.Sort();
-            }
+
         }
 
         private long idAutomatico()
